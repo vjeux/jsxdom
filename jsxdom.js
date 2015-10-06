@@ -13,7 +13,25 @@ function processChildren(dom, children) {
   }
 }
 
-var JSXDOM = {};
+var JSXDOM = function(type, attributes, children) {
+  if (arguments.length === 2 && (typeof attributes === 'string' || Array.isArray(attributes))) {
+    children = [ attributes ]
+    attributes = {}
+  }  
+  if (arguments.length > 2) {
+    children = Array.prototype.slice.call(arguments, 2);
+  }
+  children = children || []
+  attributes = attributes || {}
+  children = children.filter(function (i) { return typeof i !== 'undefined' })
+  var fn = JSXDOM[type];
+  var ret;
+  if (fn) {
+      ret = fn(attributes, children);
+  }
+  return ret;
+};
+
 tags.forEach(function(tag) {
   JSXDOM[tag] = function(attributes, children) {
     var dom = document.createElement(tag);
