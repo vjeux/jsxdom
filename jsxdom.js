@@ -51,5 +51,4 @@ if (module) {
   global.JSXDOM = JSXDOM
 }
 
-}
 })(this);
