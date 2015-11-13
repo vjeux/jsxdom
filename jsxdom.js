@@ -43,5 +43,12 @@ tags.forEach(function(tag) {
   }
 });
 
-global.JSXDOM = JSXDOM;
+if (module) {
+  module.exports = JSXDOM
+} else if (define && define.amd) {
+  define(JSXDOM);
+} else {
+  global.JSXDOM = JSXDOM
+}
+
 })(this);
