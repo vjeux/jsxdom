@@ -1,0 +1,6 @@
+{ "name": "jsxdom"
+, "version": "1.0.0"
+, "author": "Christopher Chedeau <vjeux>"
+, "repository": "https://github.com/sevcsik/jsxdom"
+, "main": "jsxdom.js"
+}
