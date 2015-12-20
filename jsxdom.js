@@ -44,4 +44,4 @@ tags.forEach(function(tag) {
 });
 
 global.JSXDOM = JSXDOM;
-})(this);
+})(this || window || global);
