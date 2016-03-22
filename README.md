@@ -1,3 +1,5 @@
+> **ABANDONNED**: This was just an evening hack when we released React a few years ago. It doesn't work anymore. You should use [nativejsx](https://github.com/treycordova/nativejsx) for a more up to date version.
+
 jsxdom
 ======
 
