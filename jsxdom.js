@@ -36,7 +36,7 @@ tags.forEach(function(tag) {
   JSXDOM[tag] = function(attributes, children) {
     var dom = document.createElement(tag);
     for (var name in attributes) {
-      dom.setAttribute(name, attributes[name]);
+      name === "checked" ? dom.checked = Boolean(attributes[name]) : dom.setAttribute(name, attributes[name]);
     }
     processChildren(dom, children);
     return dom;
